@@ -1,0 +1,383 @@
+.footer {
+    background-color: black;
+    color: white;
+    padding: 0px 50px;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+    line-height: 1.5;
+}
+
+.footerTop {
+    display: flex;
+    padding-top: 30px;
+    border-bottom: 1px rgb(184, 181, 181) solid;
+    padding-bottom: 30px;
+}
+
+.topFooterLeftSide {
+    width: 70%;
+}
+
+.tf1 {
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+    margin-bottom: 8px;
+}
+
+.tf2 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    color: #e6e6e6;
+}
+
+.SearchInFooter {
+    display: flex;
+    margin-top: 30px;
+    align-items: center;
+}
+
+.inputinfoooter input {
+    padding: 12px 35px;
+    border: 1px solid rgb(100, 100, 100);
+    background-color: transparent;
+    color: white;
+    width: 100%;
+    border-radius: 2px;
+    font-size: 14px;
+    transition: border-color 0.3s ease;
+}
+
+.inputinfoooter input:focus {
+    outline: none;
+    border-color: white;
+}
+
+.inputinfoooter input::placeholder {
+    color: #999;
+}
+
+.buttoninFooter {
+    margin-left: 10px;
+}
+
+.buttoninFooter button {
+    background-color: black;
+    color: white;
+    padding: 12px 35px;
+    border: 1px rgb(100, 100, 100) solid;
+    cursor: pointer;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+}
+
+.buttoninFooter button:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.topFooterRightSide p {
+    font-size: 15px;
+    font-weight: 300;
+    margin: 6px 0;
+}
+
+.topFooterRightSide .contacatusinfooter {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
+}
+
+.topFooterRightSide .currensyinfooter {
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    margin-top: 20px;
+    margin-bottom: 12px;
+}
+
+.topFooterRightSide .usdinfooter {
+    display: flex;
+    align-items: center;
+}
+
+.topFooterRightSide .usdinfooter img {
+    height: 30px;
+    width: 60px;
+    border-radius: 20px;
+    object-fit: cover;
+}
+
+.topFooterRightSide .usdinfooter .dot {
+    display: flex;
+    align-items: center;
+}
+
+.topFooterRightSide .usdinfooter .usdinTopFooterRightSide {
+    margin-top: -5px;
+}
+
+.topFooterRightSide .aboutTransactionInFooter {
+    font-size: 12px;
+    color: #b3b3b3;
+    max-width: 300px;
+}
+
+.footerBottom {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    padding: 30px 0;
+}
+
+.bottomfutterboldline {
+    font-weight: 600;
+    font-size: 15px;
+    padding-bottom: 15px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.bottomfutterdownarrow {
+    display: none;
+}
+
+.rotated {
+    transform: rotate(180deg);
+    transition: transform 0.3s ease;
+}
+
+.leftinbottomfooter {
+    font-size: 14px;
+    font-weight: 200;
+    width: 200px;
+}
+
+.midinbottomfooter {
+    font-size: 14px;
+    font-weight: 200;
+    width: 200px;
+}
+
+.footerBottom .bottomfooterbottomitems {
+    margin: 10px 0px;
+}
+
+.bottomfooterbottomitems a {
+    color: #e6e6e6;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.bottomfooterbottomitems a:hover {
+    color: #ffffff;
+    text-decoration: underline;
+}
+
+.lastinbottomfooter {
+    font-size: 14px;
+    font-weight: 200;
+    width: 350px;
+}
+
+.lastinbottomfooter p {
+    margin: 10px 0px;
+}
+
+.lastinbottomfooter .payment-title {
+    font-weight: 600;
+    margin-top: 20px;
+}
+
+.lastinbottomfooter img {
+    width: 50px;
+    height: 30px;
+    margin: 5px 8px 5px 0;
+    background-color: white;
+    border-radius: 7px;
+    object-fit: contain;
+    padding: 5px;
+}
+
+.lastinbottomfooter .trans_images {
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: 10px;
+}
+
+.lastinbottomfooter .bottomfootericons {
+    display: flex;
+}
+
+.lastinbottomfooter .bottomfootericons p {
+    border: 2px white solid;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    width: 35px;
+    font-size: 18px;
+    margin-right: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.lastinbottomfooter .bottomfootericons a {
+    color: white;
+    text-decoration: none;
+}
+
+.lastinbottomfooter .bottomfootericons p:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
+
+.copyrightfooter {
+    text-align: center;
+    padding: 20px 15px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
+    color: #b3b3b3;
+}
+
+.collapsible-content {
+    display: block;
+}
+
+@media(max-width: 978px) {
+    .inputinfoooter input {
+        padding: 12px 15px;
+    }
+   
+    .buttoninFooter button {
+        padding: 12px 25px;
+    }
+}
+
+@media(max-width: 869px) {
+    .inputinfoooter input {
+        padding: 12px 10px;
+    }
+   
+    .buttoninFooter button {
+        padding: 12px 15px;
+    }
+    
+    .topFooterRightSide {
+        margin-left: 50px;
+    }
+}
+
+@media(max-width: 758px) {
+    .footerTop {
+        flex-direction: column;
+    }
+    
+    .topFooterLeftSide {
+        width: 100%;
+        margin-bottom: 30px;
+    }
+    
+    .topFooterRightSide {
+        margin-left: 0px;
+        width: 100%;
+    }
+    
+    .SearchInFooter {
+        width: 100%;
+    }
+    
+    .inputinfoooter {
+        width: 70%;
+    }
+    
+    .footerBottom {
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+    
+    .leftinbottomfooter, .midinbottomfooter, .lastinbottomfooter {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .resinfooter {
+        margin-top: 15px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+@media (max-width: 541px) {
+    .footer {
+        padding: 0px 15px;
+    }
+    
+    .footerTop {
+        width: 100%;
+    }
+    
+    .currensyinfooter {
+        padding-top: 15px;
+        border-top: 1px rgb(193, 192, 192) solid;
+    }
+    
+    .aboutTransactionInFooter {
+        display: none;
+    }
+    
+    .collapsible-content {
+        display: none;
+        overflow: hidden;
+        transition: max-height 0.3s ease;
+    }
+    
+    .collapsible-content.show {
+        display: block;
+    }
+    
+    .bottomfutterdownarrow {
+        display: block;
+        font-size: 24px;
+        transition: transform 0.3s ease;
+    }
+    
+    .bottomfutterboldline {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .lastinbottomfooter .follow-us-arrow {
+        display: block;
+    }
+}
+
+@media (max-width: 376px) {
+    .SearchInFooter {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .inputinfoooter {
+        width: 100%;
+        margin-bottom: 15px;
+    }
+    
+    .buttoninFooter {
+        width: 100%;
+        margin-left: 0;
+    }
+    
+    .buttoninFooter button {
+        width: 100%;
+    }
+    
+    .lastinbottomfooter .trans_images img {
+        width: 45px;
+        height: 28px;
+        margin: 5px;
+    }
+}
