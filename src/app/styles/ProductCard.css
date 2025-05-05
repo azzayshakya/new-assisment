@@ -1,71 +1,270 @@
 .product-card {
-    width: 100%;
-    max-width: 280px;
-    border: 1px solid #eee;
-    border-radius: 10px;
-    overflow: hidden;
-    padding: 12px;
-    position: relative;
-    background-color: #fff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-    transition: box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 280px;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  overflow: hidden;
+  padding: 12px;
+  position: relative;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+  opacity: 0;
+  transform: translateY(20px);
+  animation-fill-mode: forwards;
+}
+
+.product-card:hover {
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  transform: translateY(-5px);
+}
+
+.product-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
+.image-wrapper {
+  width: 100%;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  border-radius: 6px;
+  margin-bottom: 10px;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: transform 0.5s ease;
+  overflow: hidden;
+}
+
+.image-container.zoomed {
+  transform: scale(1.1);
+}
+
+.product-image {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  transition: all 0.5s ease;
+}
+
+.product-label {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #fff;
+  background-color: #222;
+  padding: 4px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  opacity: 0;
+  animation: labelFadeIn 0.3s ease 0.5s forwards;
+  z-index: 2;
+}
+
+@keyframes labelFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
   }
-  
-  .product-card:hover {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .product-link {
-    text-decoration: none;
-    color: inherit;
+}
+
+.product-details {
+  margin-top: 10px;
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-details {
+  transform: translateY(-2px);
+}
+
+.product-title {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+  margin: 5px 0;
+  height: 44px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  position: relative;
+}
+
+.product-title::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background-color: #333;
+  transition: width 0.3s ease;
+}
+
+.product-card:hover .product-title::after {
+  width: 40px;
+}
+
+.product-meta {
+  font-size: 13px;
+  color: #777;
+  margin-top: 8px;
+  transition: color 0.3s ease;
+}
+
+.product-card:hover .product-meta {
+  color: #555;
+}
+
+.wishlist-icon {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 22px;
+  color: #aaa;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background-color: rgba(255, 255, 255, 0.9);
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform: scale(0.8);
+  opacity: 0.7;
+  z-index: 3;
+}
+
+.product-card:hover .wishlist-icon {
+  transform: scale(1);
+  opacity: 1;
+}
+
+.wishlist-icon.liked {
+  color: #ff3e6c;
+}
+
+.wishlist-icon.liked svg {
+  animation: heartBeat 0.4s ease;
+}
+
+@keyframes heartBeat {
+  0% { transform: scale(1); }
+  25% { transform: scale(1.3); }
+  50% { transform: scale(1); }
+  75% { transform: scale(1.3); }
+  100% { transform: scale(1); }
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 25px;
+  padding: 20px 0;
+}
+
+.animate-fade-in-up {
+  animation: fadeInUp 0.6s ease forwards;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.5s ease forwards;
+}
+
+.animate-pulse-soft {
+  animation: pulseSoft 2s infinite;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
-  
-  .image-wrapper {
-    width: 100%;
-    height: 200px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .product-image {
-    max-width: 100%;
-    max-height: 100%;
-    object-fit: contain;
-  }
-  
-  .product-label {
-    font-size: 12px;
-    font-weight: bold;
-    color: #999;
-    margin-top: 8px;
-    text-transform: uppercase;
-  }
-  
-  .product-details {
-    margin-top: 10px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes pulseSoft {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.8; }
+}
+
+.product-loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;
+}
+
+.product-loading::after {
+  content: '';
+  width: 50px;
+  height: 50px;
+  border: 3px solid #eee;
+  border-radius: 50%;
+  border-top-color: #333;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-color-scheme: dark) {
+  .product-card {
+    background-color: #111;
+    border-color: #333;
   }
   
   .product-title {
-    font-size: 16px;
-    font-weight: 600;
-    line-height: 1.4;
-    margin: 5px 0;
-    height: 40px;
-    overflow: hidden;
+    color: #eee;
   }
   
   .product-meta {
-    font-size: 13px;
-    color: #777;
+    color: #999;
+  }
+  
+  .product-title::after {
+    background-color: #ccc;
   }
   
   .wishlist-icon {
-    position: absolute;
-    bottom: 10px;
-    right: 12px;
-    font-size: 20px;
+    background-color: rgba(17, 17, 17, 0.9);
     color: #ccc;
-    cursor: pointer;
   }
   
+  .wishlist-icon.liked {
+    color: #ff3e6c;
+  }
+  
+  .product-card:hover {
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  }
+}

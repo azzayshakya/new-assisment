@@ -1,41 +1,89 @@
+/* SortDropdown.css */
 .sort-dropdown {
-    position: relative;
-    font-weight: 600;
-    cursor: pointer;
-    user-select: none;
+  position: relative;
+  font-weight: 600;
+  width: 250px;
+  user-select: none;
+  font-family: sans-serif;
+}
+
+.sort-selected {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 16px;
+  background-color: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+  transition: all 0.2s ease;
+}
+
+.sort-selected:hover {
+  border-color: #ccc;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+.arrow {
+  font-size: 10px;
+  transition: transform 0.3s ease;
+}
+
+.arrow-up {
+  transform: rotate(180deg);
+}
+
+.sort-options {
+  position: absolute;
+  top: calc(100% + 8px);
+  left: 0;
+  width: 100%;
+  background: white;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  z-index: 999;
+  animation: dropdown-appear 0.3s ease forwards;
+  overflow: hidden;
+}
+
+@keyframes dropdown-appear {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
   }
-  
-  .sort-dropdown .arrow {
-    margin-left: 5px;
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .sort-options {
-    position: absolute;
-    right: 0;
-    top: 100%;
-    width: 250px;
-    background: #fff;
-    border: 1px solid #ccc;
-    z-index: 999;
-  }
-  
-  .option {
-    padding: 12px 16px;
-    cursor: pointer;
-    font-size: 14px;
-    border-bottom: 1px solid #eee;
-  }
-  
-  .option:last-child {
-    border-bottom: none;
-  }
-  
-  .option:hover {
-    background-color: #f7f7f7;
-  }
-  
-  .option.active {
-    font-weight: bold;
-    color: #222;
-  }
-  
+}
+
+.option {
+  display: flex;
+  align-items: center;
+  padding: 12px 16px;
+  cursor: pointer;
+  font-size: 14px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: background-color 0.2s ease;
+}
+
+.option:last-child {
+  border-bottom: none;
+}
+
+.option:hover {
+  background-color: #f7f7f7;
+}
+
+.option.active {
+  font-weight: bold;
+  color: #222;
+  background-color: #f0f5ff;
+}
+
+.check {
+  margin-right: 8px;
+  color: #4a6cf7;
+}

@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import '@/app/styles/SortDropdown.css';
 
+
 const options = [
   'RECOMMENDED',
   'NEWEST FIRST',
@@ -9,7 +10,7 @@ const options = [
   'PRICE : LOW TO HIGH'
 ];
 
-const SortDropdown = ({ sort, setSort }) => {
+const SortDropdown = ({ sort = options[0], setSort = () => {} }) => {
   const [open, setOpen] = useState(false);
 
   const handleSelect = (option) => {
@@ -18,9 +19,12 @@ const SortDropdown = ({ sort, setSort }) => {
   };
 
   return (
-    <div className="sort-dropdown" onClick={() => setOpen(!open)}>
-      <span>{sort}</span>
-      <span className="arrow">⌄</span>
+    <div className="sort-dropdown">
+      <div className="sort-selected" onClick={() => setOpen(!open)}>
+        <span>{sort}</span>
+        <span className={`arrow ${open ? 'arrow-up' : ''}`}>▼</span>
+      </div>
+      
       {open && (
         <div className="sort-options">
           {options.map((option) => (
@@ -29,8 +33,8 @@ const SortDropdown = ({ sort, setSort }) => {
               className={`option ${option === sort ? 'active' : ''}`}
               onClick={() => handleSelect(option)}
             >
-              {option === sort && <span>✔ </span>}
-              {option}
+              {option === sort && <span className="check">✓</span>}
+              <span>{option}</span>
             </div>
           ))}
         </div>

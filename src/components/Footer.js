@@ -2,6 +2,8 @@
 
 import React, { useState } from "react";
 import "@/app/styles/Footer.css";
+import "@/app/globals.css";
+
 import Image from "next/image";
 import Link from "next/link";
 import { MdOutlineKeyboardArrowDown, MdCameraAlt } from "react-icons/md";
@@ -26,8 +28,8 @@ const Footer = () => {
   };
 
   return (
-    <div>
-      <div className="footer">
+    <div className="bg-black">
+      <div className="footer container">
         <div className="footerTop">
           <div className="topFooterLeftSide">
             <p className="tf1">BE THE FIRST TO KNOW</p>
