@@ -26,10 +26,7 @@ export default function SidebarFilters() {
 
   return (
     <aside className="sidebar-filter">
-      <div className="filter-header">
-        <span className="item-count">3425 ITEMS</span>
-        <button className="hide-filter">HIDE FILTER</button>
-      </div>
+     
 
       <div className="filter-block">
         <label className="custom-checkbox">
