@@ -23,7 +23,6 @@ export default function LoginPage() {
       [name]: value,
     }));
 
-    // Clear error when typing
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -35,7 +34,6 @@ export default function LoginPage() {
   const validateForm = () => {
     const newErrors = {};
 
-    // Email validation
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (
@@ -44,7 +42,6 @@ export default function LoginPage() {
       newErrors.email = "Invalid email address";
     }
 
-    // Password validation
     if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 3) {
@@ -70,6 +67,7 @@ export default function LoginPage() {
       });
 
       router.push("/");
+      router.refresh(); 
     } catch (error) {
       console.error("Login failed:", error);
       setLoginError(
@@ -122,7 +120,6 @@ export default function LoginPage() {
           <button type="submit" disabled={isLoading} className="login-button">
             {isLoading ? (
               <>
-                <span className="spinner"></span>
                 Signing In...
               </>
             ) : (

@@ -4,8 +4,10 @@ import ProductCard from "@/components/ProductCard";
 import SidebarFilters from "@/components/SidebarFilters";
 import SortDropdown from "@/components/SortDropdown";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/navigation";
 import "@/app/styles/Home.css";
 import "@/app/globals.css";
+import { toast } from "react-toastify";
 
 export default function Home() {
   const [products, setProducts] = useState([]);
@@ -13,6 +15,16 @@ export default function Home() {
   const [sort, setSort] = useState("RECOMMENDED");
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [loading, setLoading] = useState(true);
+
+  const router = useRouter(); 
+
+  useEffect(() => {
+    const token = localStorage.getItem("authToken");
+    if (!token) {
+      toast.error("Please Login First")
+      router.push("/login");
+    }
+  }, [router]);
 
   useEffect(() => {
     const fetchProducts = async () => {
@@ -35,9 +47,11 @@ export default function Home() {
     "men's clothing",
     "women's clothing",
   ];
+
   const filtered = category
     ? products.filter((p) => p.category === category)
     : products;
+
   const sorted = [...filtered].sort((a, b) => {
     if (sort === "PRICE : LOW TO HIGH") return a.price - b.price;
     if (sort === "PRICE : HIGH TO LOW") return b.price - a.price;
@@ -52,7 +66,7 @@ export default function Home() {
         </div>
       ) : (
         <>
-          <div className="top-bar ">
+          <div className="top-bar">
             <span className="item-count">{sorted.length} ITEMS</span>
             <span
               className="hide-filter"
@@ -63,7 +77,7 @@ export default function Home() {
             <SortDropdown sort={sort} setSort={setSort} />
           </div>
 
-          <div className="layout ">
+          <div className="layout">
             {sidebarOpen && (
               <aside className="sidebar">
                 <SidebarFilters

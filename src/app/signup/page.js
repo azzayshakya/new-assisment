@@ -23,7 +23,6 @@ export default function Signup() {
       [name]: value,
     }));
 
-    // Clear error when typing
     if (errors[name]) {
       setErrors((prev) => ({
         ...prev,
@@ -35,7 +34,6 @@ export default function Signup() {
   const validateForm = () => {
     const newErrors = {};
 
-    // Email validation
     if (!formData.email) {
       newErrors.email = "Email is required";
     } else if (
@@ -44,7 +42,6 @@ export default function Signup() {
       newErrors.email = "Invalid email address";
     }
 
-    // Password validation
     if (!formData.password) {
       newErrors.password = "Password is required";
     } else if (formData.password.length < 3) {
@@ -69,7 +66,7 @@ export default function Signup() {
         password: formData.password,
       });
 
-      router.push("/");
+      router.push("/login");
     } catch (error) {
       console.error("Account creation failed:", error);
       setLoginError(
@@ -122,7 +119,6 @@ export default function Signup() {
           <button type="submit" disabled={isLoading} className="login-button">
             {isLoading ? (
               <>
-                {/* <span className="spinner"></span> */}
                 Creating account...
               </>
             ) : (

@@ -204,13 +204,26 @@
   width: 100%;
 }
 
-/* Product Header Styles */
 .product-header {
   text-align: center;
   padding: 80px 20px 40px;
   border-bottom: 1px solid rgba(0, 0, 0, 0.06);
   max-width: 1200px;
   margin: 0 auto;
+}
+
+.auth-button {
+  margin-left: 10px;
+  padding: 6px 12px;
+  background-color: #000;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.auth-button:hover {
+  background-color: #444;
 }
 
 @media (prefers-color-scheme: dark) {
