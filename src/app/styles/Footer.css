@@ -190,7 +190,7 @@
     margin-top: 20px;
 }
 
-.lastinbottomfooter img {
+.lastinbottomfooter .trans_images img{
     width: 50px;
     height: 30px;
     margin: 5px 8px 5px 0;
@@ -210,7 +210,7 @@
     display: flex;
 }
 
-.lastinbottomfooter .bottomfootericons p {
+.lastinbottomfooter .bottomfootericons span {
     border: 2px white solid;
     border-radius: 50%;
     display: flex;
@@ -379,5 +379,6 @@
         width: 45px;
         height: 28px;
         margin: 5px;
+    
     }
 }

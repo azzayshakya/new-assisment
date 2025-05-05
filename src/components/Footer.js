@@ -50,20 +50,21 @@ const Footer = () => {
             <p>+44 221 133 5360</p>
             <p className="custmermail">customercare@mettamuse.com</p>
             <p className="currensyinfooter">CURRENCY</p>
-            <p className="usdinfooter">
-              <div className="flag">
-                <img
+            <div className="usdinfooter">
+              <span className="flag">
+                <Image
                   src="/FooterImages/usaflag.jpg"
                   alt="USA Flag"
                   width={60}
                   height={30}
                 />
-              </div>
-              <div className="dot">
+              </span>
+              <span className="dot">
                 <LuDot />
-              </div>
-              <div className="usdinTopFooterRightSide">USD</div>
-            </p>
+              </span>
+              <span className="usdinTopFooterRightSide">USD</span>
+            </div>
+
             <p className="aboutTransactionInFooter">
               Transactions will be completed in Euros and a currency reference
               is available on hover.
@@ -164,34 +165,64 @@ const Footer = () => {
             >
               <p className="bottomfootericons">
                 <a
-                  href="https://instagram.com/mettamuse"
+                  href="https://instagram.com/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="Instagram"
                 >
-                  <p>
+                  <span>
                     <MdCameraAlt />
-                  </p>
+                  </span>
                 </a>
                 <a
-                  href="https://linkedin.com/company/mettamuse"
+                  href="https://linkedin.com/company/"
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label="LinkedIn"
                 >
-                  <p>
+                  <span>
                     <FaLinkedin />
-                  </p>
+                  </span>
                 </a>
               </p>
               <p className="payment-title">mettā muse ACCEPTS</p>
               <p className="trans_images">
-                <img src="/FooterImages/google-pay.svg" alt="Google Pay" />
-                <img src="/FooterImages/master-card.svg" alt="MasterCard" />
-                <img src="/FooterImages/paypal.png" alt="Paypal" />
-                <img src="/FooterImages/amex.svg" alt="American Express" />
-                <img src="/FooterImages/apple-pay.svg" alt="Apple Pay" />
-                <img src="/FooterImages/opay.svg" alt="OPay" />
+                <Image
+                  src="/FooterImages/google-pay.svg"
+                  alt="Google Pay"
+                  width={50}
+                  height={30}
+                />
+                <Image
+                  src="/FooterImages/master-card.svg"
+                  alt="MasterCard"
+                  width={0}
+                  height={30}
+                />
+                <Image
+                  src="/FooterImages/paypal.png"
+                  alt="Paypal"
+                  width={50}
+                  height={30}
+                />
+                <Image
+                  src="/FooterImages/upi.6114ac6.svg"
+                  alt="American Express"
+                  width={50}
+                  height={30}
+                />
+                <Image
+                  src="/FooterImages/apple-pay.svg"
+                  alt="Apple Pay"
+                  width={50}
+                  height={30}
+                />
+                <Image
+                  src="/FooterImages/razorpay.6e46f6f.svg"
+                  alt="OPay"
+                  width={50}
+                  height={30}
+                />
               </p>
             </div>
           </div>
